@@ -1,0 +1,230 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On    # Turn on the rewriting engine
+Options -Multiviews
+RewriteRule    ^Logout/?$    logout.php    [L] 
+RewriteRule    ^Login/(.*)/?$    login.php?cmpid=$1    [L] 
+RewriteRule    ^Home/?$    index.php   [L] 
+
+RewriteRule    ^Controller/Login/?$    api/login.php    [L] 
+RewriteRule    ^Controller/USER/?$    api/user.php    [L] 
+
+RewriteRule    ^Controller/PERMISSION/?$    api/permission.php    [L] 
+RewriteRule    ^Controller/PROFILE/?$    api/profile.php    [L] 
+RewriteRule    ^Controller/REGION/?$    api/region.php    [L] 
+RewriteRule    ^Controller/BRANCH/?$    api/branch.php    [L]
+RewriteRule    ^Controller/DESIGNATION/?$    api/designation.php    [L] 
+RewriteRule    ^Controller/UNIT/?$    api/unit.php    [L] 
+RewriteRule    ^Controller/INDUSTRY/?$    api/industry.php    [L]
+RewriteRule    ^Controller/SOURCE/?$    api/source.php    [L]
+RewriteRule    ^Controller/COUNTRY/?$    api/country.php    [L]
+RewriteRule    ^Controller/COMPLAINTNATURE/?$    api/complaint_nature.php    [L]
+RewriteRule    ^Controller/TRANSPORTMODE/?$    api/transport_mode.php    [L]
+RewriteRule    ^Controller/FOLLOWUP/?$    api/followup_type.php    [L]
+RewriteRule    ^Controller/TASKTYPE/?$    api/task_type.php    [L]
+RewriteRule    ^Controller/ENQUIRY/?$    api/enquiry_status.php    [L] 
+RewriteRule    ^Controller/EXPENSESHEAD/?$    api/expenses_head.php    [L] 
+RewriteRule    ^Controller/PRODUCT/?$    api/product.php    [L]
+RewriteRule    ^Controller/CATEGORY/?$    api/category.php    [L]
+RewriteRule    ^Controller/LEAD/?$    api/lead.php    [L]
+
+RewriteRule    ^Controller/VEHICLE/?$    api/vehicle.php    [L]
+RewriteRule    ^Controller/VSTAFF/?$    api/vstaff.php    [L]
+RewriteRule    ^Controller/STAFF/?$    api/staff.php    [L]
+RewriteRule    ^Controller/CHNGPWD/?$    api/change_pwd.php    [L] 
+RewriteRule    ^Controller/DEPARTMENT/?$    api/department.php    [L] 
+
+RewriteRule    ^Controller/IMPORT/?$    api/import.php    [L] 
+ 
+ 
+RewriteRule    ^Controller/ITEM/?$    api/item.php    [L] 
+RewriteRule    ^Controller/PARTY/?$    api/party.php    [L] 
+RewriteRule    ^Controller/PURCHASE/?$    api/purchase.php    [L] 
+RewriteRule    ^Controller/BILLING/?$    api/billing.php    [L] 
+RewriteRule    ^Controller/JOB/?$    api/job.php    [L] 
+
+
+RewriteRule    ^Setting/?$    setting.php   [NC,L] 
+RewriteRule    ^Change_Password/?$    change_pwd.php   [NC,L] 
+RewriteRule    ^company-profile/?$    institute_profile.php   [L]
+RewriteRule    ^Add_Designation/?$    add_designation.php   [L] 
+RewriteRule    ^Add_Designation/(.*)/([A-Za-z0-9-]+)/?$    add_designation.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Department/?$    add_department.php   [L] 
+RewriteRule    ^Add_Department/(.*)/([A-Za-z0-9-]+)/?$    add_department.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add-Dealership/?$    add_dealershipform.php   [L] 
+RewriteRule    ^Add-Dealership/(.*)/([A-Za-z0-9-]+)/?$    add_dealershipform.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^All-Dealership/?$    all_dealershipform.php   [L]
+RewriteRule    ^Add-Resources/?$    add_resources.php   [L] 
+RewriteRule    ^Add-Resources/(.*)/([A-Za-z0-9-]+)/?$    add_resources.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^all-customer/?$    all_customer.php   [L] 
+RewriteRule    ^all-electrician/?$    all_electrician.php   [L] 
+RewriteRule    ^all-electrician/(.*)/([A-Za-z0-9-]+)/?$    all_electrician.php?method=$1&edit_id=$2   [L]
+ 
+RewriteRule    ^Add_Region/?$    add_region.php   [L] 
+RewriteRule    ^Add_Region/(.*)/([A-Za-z0-9-]+)/?$    add_region.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Branch/?$    add_branch.php   [L] 
+RewriteRule    ^Add_Branch/(.*)/([A-Za-z0-9-]+)/?$    add_branch.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_User/?$    add_user.php   [L] 
+RewriteRule    ^All_User/?$    all_user.php   [L] 
+RewriteRule    ^Add_User/(.*)/([A-Za-z0-9-]+)/?$    add_user.php?method=$1&edit_id=$2    [L]
+RewriteRule    ^Add_Industry/?$    add_industry.php   [L] 
+RewriteRule    ^Add_Industry/(.*)/([A-Za-z0-9-]+)/?$    add_industry.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Segment/(.*)/([A-Za-z0-9-]+)/?$    add_segment.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Source/?$    add_source.php   [L] 
+RewriteRule    ^Add_Source/(.*)/([A-Za-z0-9-]+)/?$    add_source.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_CSource/?$    add_csource.php   [L] 
+RewriteRule    ^Add_CSource/(.*)/([A-Za-z0-9-]+)/?$    add_csource.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Complaint/?$    add_complaint.php   [L]
+RewriteRule    ^Add_Complaint/(.*)/([A-Za-z0-9-]+)/?$    add_complaint.php?method=$1&edit_id=$2   [L] 
+
+RewriteRule    ^Add_Reference/(.*)/([A-Za-z0-9-]+)/?$    add_reference.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Country/?$    add_country.php   [L] 
+RewriteRule    ^Add_Country/(.*)/([A-Za-z0-9-]+)/?$    add_country.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_State/(.*)/([A-Za-z0-9-]+)/?$    add_state.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Location/(.*)/([A-Za-z0-9-]+)/?$    add_location.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Transport_Mode/?$    add_transport_mode.php   [L] 
+RewriteRule    ^Add_Transport_Mode/(.*)/([A-Za-z0-9-]+)/?$    add_transport_mode.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Expenses_Head/?$    add_expenses_head.php   [L] 
+RewriteRule    ^Add_Expenses_Head/(.*)/([A-Za-z0-9-]+)/?$    add_expenses_head.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Followup_Type/?$    add_followup_type.php   [L] 
+RewriteRule    ^Add_Followup_Type/(.*)/([A-Za-z0-9-]+)/?$    add_followup_type.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Task_Type/?$    add_task_type.php   [L] 
+RewriteRule    ^Add_Task_Type/(.*)/([A-Za-z0-9-]+)/?$    add_task_type.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Enquiry_Status/?$    add_enquiry_status.php   [L] 
+RewriteRule    ^Add_Enquiry_Status/(.*)/([A-Za-z0-9-]+)/?$    add_enquiry_status.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Complaint_Nature/?$    add_complaint_nature.php   [L] 
+RewriteRule    ^Add_Complaint_Nature/(.*)/([A-Za-z0-9-]+)/?$    add_complaint_nature.php?method=$1&edit_id=$2   [L] 
+
+RewriteRule    ^All_Complaint/?$    all_complaint.php   [L]
+RewriteRule    ^All_Warranty/?$    all_warranty.php   [L] 
+RewriteRule    ^All_Service-request/?$    all_service-request.php   [L] 
+RewriteRule    ^All_Order/?$    all_order.php   [L] 
+
+RewriteRule    ^UserPermission/?$    user_perm.php   [L] 
+RewriteRule    ^UserPermission/Auth/([A-Za-z0-9-]+)/?$    user_perm.php?user_id=$1   [L] 
+
+RewriteRule    ^editprofile/?$    edit_profile.php   [L] 
+
+RewriteRule    ^admin/login/?$    admin/login.php    [L]    # Handle product requests
+
+#############Inventory################
+RewriteRule    ^Add_Category/?$    add_category.php   [L] 
+RewriteRule    ^Add_Category/(.*)/([A-Za-z0-9-]+)/?$    add_category.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_SubCategory/?$    add_subcategory.php   [L] 
+RewriteRule    ^Add_SubCategory/(.*)/([A-Za-z0-9-]+)/?$    add_subcategory.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Solcat/?$    add_solcat.php   [L] 
+RewriteRule    ^Add_Solcat/(.*)/([A-Za-z0-9-]+)/?$    add_solcat.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Solsubcat/?$    add_solsubcat.php   [L] 
+RewriteRule    ^Add_Solsubcat/(.*)/([A-Za-z0-9-]+)/?$    add_solsubcat.php?method=$1&edit_id=$2   [L]
+
+RewriteRule    ^Add_Varient/?$    add_varient.php   [L] 
+RewriteRule    ^Add_Varient/(.*)/([A-Za-z0-9-]+)/?$    add_varient.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Ptype/?$    add_ptype.php   [L] 
+RewriteRule    ^Add_Ptype/(.*)/([A-Za-z0-9-]+)/?$    add_ptype.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Ptype2/?$    add_ptype2.php   [L] 
+RewriteRule    ^Add_Ptype2/(.*)/([A-Za-z0-9-]+)/?$    add_ptype2.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Rating/?$    add_rating.php   [L] 
+RewriteRule    ^Add_Rating/(.*)/([A-Za-z0-9-]+)/?$    add_rating.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Sectors/?$    add_sectors.php   [L] 
+RewriteRule    ^Add_Sectors/(.*)/([A-Za-z0-9-]+)/?$    add_sectors.php?method=$1&edit_id=$2   [L]
+
+RewriteRule    ^Add_Godown/?$    add_godown.php   [L] 
+RewriteRule    ^Add_Godown/(.*)/([A-Za-z0-9-]+)/?$    add_godown.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Brand/?$    add_brand.php   [L] 
+RewriteRule    ^Add_Brand/(.*)/([A-Za-z0-9-]+)/?$    add_brand.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Bcat/?$    add_bcat.php   [L] 
+RewriteRule    ^Add_Bcat/(.*)/([A-Za-z0-9-]+)/?$    add_bcat.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Blog/?$    add_blog.php   [L] 
+RewriteRule    ^Add_Blog/(.*)/([A-Za-z0-9-]+)/?$    add_blog.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^All_Comment/?$    all_comment.php   [L]
+RewriteRule    ^Add_Slider/?$    add_slider.php   [L] 
+RewriteRule    ^Add_Slider/(.*)/([A-Za-z0-9-]+)/?$    add_slider.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Pcat/?$    add_pcat.php   [L] 
+RewriteRule    ^Add_Pcat/(.*)/([A-Za-z0-9-]+)/?$    add_pcat.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Wproduct/?$    add_wproduct.php   [L] 
+RewriteRule    ^Add_Wproduct/(.*)/([A-Za-z0-9-]+)/?$    add_wproduct.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_News/?$    add_news.php   [L] 
+RewriteRule    ^Add_News/(.*)/([A-Za-z0-9-]+)/?$    add_news.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Jobs/?$    add_jobs.php   [L] 
+RewriteRule    ^Add_Jobs/(.*)/([A-Za-z0-9-]+)/?$    add_jobs.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_FAQ/?$    add_faq.php   [L] 
+RewriteRule    ^Add_FAQ/(.*)/([A-Za-z0-9-]+)/?$    add_faq.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^Add_Dealer/?$    add_dealer.php   [L] 
+RewriteRule    ^Add_Dealer/(.*)/([A-Za-z0-9-]+)/?$    add_dealer.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^All_Contact/?$    all_contact.php   [L] 
+RewriteRule    ^All_Enquiry/?$    all_enquiry.php   [L] 
+RewriteRule    ^All_Registration/?$    all_registration.php   [L] 
+RewriteRule    ^All_Career/?$    all_career.php   [L] 
+RewriteRule    ^All_Subscribe/?$    all_subscribe.php   [L] 
+RewriteRule    ^All_Visitor/?$    all_visitor.php   [L] 
+RewriteRule    ^Add_Career/(.*)/([A-Za-z0-9-]+)/?$    add_career.php?method=$1&edit_id=$2   [L]
+
+RewriteRule    ^All_Serial/?$    all_serial.php   [L] 
+RewriteRule    ^Add_Serial/?$    generate_serial.php   [L]
+
+RewriteRule    ^Add_Unit/?$    add_unit.php   [L] 
+RewriteRule    ^Add_Unit/(.*)/([A-Za-z0-9-]+)/?$    add_unit.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Item/?$    add_item.php   [L] 
+RewriteRule    ^Add_Item/(.*)/([A-Za-z0-9-]+)/?$    add_item.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Product/?$    add_product.php   [L]
+RewriteRule    ^Add_Product/(.*)/([A-Za-z0-9-]+)/?$    add_product.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^All_Product/([A-Za-z0-9-]+)/?$    all_product.php?prd_id=$1   [L]
+RewriteRule    ^All_Item/?$    all_item.php   [L] 
+RewriteRule    ^pkt_print/([A-Z-]+)/([A-Za-z0-9-]+)/?$    pkt_print.php?method=$1&prd_id=$2   [L]
+
+RewriteRule    ^All_Lead/?$    all_lead.php   [L]
+RewriteRule    ^All_Pending_Lead/?$    all_pending_lead.php   [L]
+RewriteRule    ^Add_Lead/?$    add_lead.php   [L]
+RewriteRule    ^Add_Lead/(.*)/([A-Za-z0-9-]+)/?$    add_lead.php?method=$1&edit_id=$2   [L]
+RewriteRule    ^All_Noti/?$    all_notification.php   [L]
+
+########### Report  ############
+RewriteRule    ^Report/?$    report.php   [NC,L] 
+RewriteRule    ^new-lead-report/?$ 	new_lead_report.php   [L] 
+
+RewriteRule    ^Feeprint/([A-Za-z0-9-]+)/?$ 	feeprint.php?recno=$1   [L]
+
+RewriteRule    ^Add_Solution/?$    add_solution.php   [L]
+RewriteRule    ^Add_Solution/(.*)/([A-Za-z0-9-]+)/?$    add_solution.php?method=$1&edit_id=$2   [L]
+
+
+RewriteRule    ^Add_Party/?$    add_party.php   [L] 
+RewriteRule    ^All_Party/?$    all_party.php   [L] 
+RewriteRule    ^Add_Party/(.*)/([A-Za-z0-9-]+)/?$    add_party.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Purchase/?$    add_purchase.php   [L] 
+RewriteRule    ^All_Purchase/?$    all_purchase.php   [L] 
+RewriteRule    ^Add_Purchase/(.*)/([A-Za-z0-9-]+)/?$    add_purchase.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Add_Billing/?$    add_billing.php   [L] 
+RewriteRule    ^All_Billing/?$    all_billing.php   [L] 
+RewriteRule    ^Add_Billing/(.*)/([A-Za-z0-9-]+)/?$    add_billing.php?method=$1&edit_id=$2   [L] 
+RewriteRule    ^Print_Bill/([A-Za-z0-9-]+)/?$    billreceipt1.php?inv_no=$1   [L] 
+
+############# JOB ###################
+RewriteRule    ^Add_Job/?$    add_job.php   [L] 
+RewriteRule    ^All_Job/?$    all_job.php   [L] 
+RewriteRule    ^Add_Job/(.*)/([A-Za-z0-9-]+)/?$    add_job.php?method=$1&edit_id=$2   [L] 
+
+
+
+####################################
+
+#RewriteCond     %{SERVER_PORT} ^80$
+#RewriteRule     ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+
+#Redirect to www...
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+##### Remove .php extension 
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
+###### End Removing .php
+
+#if requested filename is not a existing file
+RewriteCond %{REQUEST_FILENAME} !-f
+#if requested filename is not a existing directory
+RewriteCond %{REQUEST_FILENAME} !-d 
+#Rewrite the url
+RewriteRule ^([^/]+)/?$ https://www.microelectra.in/crmpanel/ [R,L]
+
+</IfModule>

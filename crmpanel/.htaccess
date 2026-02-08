@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On    # Turn on the rewriting engine
+
+RewriteRule    ^crmsoft/([A-Za-z0-9-]+)/?$    crm/login.php?cmpid=$1    [L] 
+
+
+
+##### Remove .php extension 
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
+###### End Removing .php
+
+#if requested filename is not a existing file
+RewriteCond %{REQUEST_FILENAME} !-f
+#if requested filename is not a existing directory
+RewriteCond %{REQUEST_FILENAME} !-d 
+#Rewrite the url
+RewriteRule ^([^/]+)/?$ https://www.subtech.in/crmpanel/crmsoft/subtech/ [R,L]
+
+</IfModule>
