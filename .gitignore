@@ -1,0 +1,28 @@
+# OS & System
+AppData/
+NTUSER.*
+OneDrive/
+Desktop.ini
+Thumbs.db
+
+# Android / SDK
+Android/
+Sdk/
+.gradle/
+.idea/
+
+# Editors
+.vscode/
+.viminfo
+
+# SSH / Secrets
+.ssh/
+*.pem
+*.key
+
+# Node / PHP
+node_modules/
+vendor/
+
+# Logs
+*.log

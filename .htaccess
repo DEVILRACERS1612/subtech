@@ -1,0 +1,94 @@
+# ===============================
+# ENABLE BROWSER CACHING
+# ===============================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Images
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS & JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    # HTML (do not cache long)
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|png|jpg|jpeg|webp|svg|ico|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine On    # Turn on the rewriting engine
+Options -Multiviews
+
+RewriteRule    ^Controller/Master/?$    api/master.php    [L]
+
+
+RewriteRule    ^visitorregistration/?$    visitorregistration.php   [L] 
+RewriteRule    ^registration/?$    registration.php   [L] 
+RewriteRule    ^customer-care/?$    customercare.php   [L] 
+RewriteRule    ^dealer-locator/?$    dealer.php   [L] 
+RewriteRule    ^about/?$    about.php   [L] 
+RewriteRule    ^awards/?$    awards.php   [L] 
+
+RewriteRule    ^complains/?$    grievances.php   [L] 
+RewriteRule    ^claim-your-warranty/?$    claim-your-warranty.php   [L] 
+RewriteRule    ^electrician_register/?$    electrician_register.php   [L] 
+RewriteRule    ^electrician_register/([A-Za-z0-9-]+)/?$    electrician_register.php?refid=$1   [L]
+RewriteRule    ^blogs/?$    bloging.php   [L]  
+RewriteRule    ^blogs/([A-Za-z0-9_-]+)/?$    bloging.php?cat=$1   [L]
+RewriteRule    ^tblogs/([A-Za-z0-9_-]+)/?$    bloging.php?tag=$1   [L]
+  
+RewriteRule    ^blog/(.*)/?$    bloging-single.php?url=$1   [L] 
+RewriteRule    ^faq/?$    faq.php   [L] 
+RewriteRule    ^resources/?$    resources.php   [L] 
+RewriteRule    ^privacy-policy/?$    privacy.php   [L] 
+RewriteRule    ^return-policy/?$    return_policy.php   [L] 
+RewriteRule    ^term-and-condition/?$    terms.php   [L] 
+RewriteRule    ^jobs/?$    jobs.php   [L] 
+RewriteRule    ^job/([^/]+)/?$    job-detail.php?jobid=$1   [L]
+RewriteRule    ^contact/?$    contact.php   [L] 
+RewriteRule    ^category/([A-Za-z0-9-]+)/?$    category.php?catid=$1   [L] 
+RewriteRule    ^products/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$    product_listing.php?catid=$1&subcatid=$2&ptype=$3   [L]
+RewriteRule    ^solutions/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$    solution-services.php?catid=$1&subcatid=$2   [L]
+
+#RewriteRule ^products/([^/]+)/([^/]+)/([^/]+)/?$ product_listing.php?cat=$1&subcat=$2&ptype=$3 [L,QSA]
+
+RewriteRule    ^product/([A-Za-z0-9-]+)/?$    product_single.php?itmid=$1   [L]
+
+
+##### Remove .php extension 
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
+###### End Removing .php
+#RewriteBase /
+RewriteCond %{HTTP_HOST} ^www.subtech.in [NC]
+RewriteRule ^(.*)$ https://subtech.in/$1 [L,R=301]
+
+#if requested filename is not a existing file
+RewriteCond %{REQUEST_FILENAME} !-f
+#if requested filename is not a existing directory
+RewriteCond %{REQUEST_FILENAME} !-d 
+#Rewrite the url
+RewriteRule ^([^/]+)/?$ https://www.subtech.in/ [R,L]
+
+</IfModule>

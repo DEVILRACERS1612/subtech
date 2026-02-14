@@ -1,0 +1,19 @@
+[10-Jun-2025 11:13:22 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_PATH" in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/index.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/index.php on line 44
+[10-Jun-2025 11:13:34 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_PATH" in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/config/head.php:9
+Stack trace:
+#0 /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/index.php(13): include()
+#1 {main}
+  thrown in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/config/head.php on line 9
+[10-Jun-2025 11:13:46 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_PATH" in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/config/head.php:9
+Stack trace:
+#0 /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/index.php(13): include()
+#1 {main}
+  thrown in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/config/head.php on line 9
+[10-Jun-2025 11:13:59 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_PATH" in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/config/head.php:9
+Stack trace:
+#0 /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/index.php(13): include()
+#1 {main}
+  thrown in /home/bhagwanbabu/public_html/microelectra.in/crmpanel/admin/config/head.php on line 9

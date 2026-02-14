@@ -1,0 +1,11 @@
+[06-Feb-2026 17:16:44 Asia/Kolkata] PHP Notice:  Undefined property: User::$electrician_table in /home/devilracers1612/public_html/subtech.in/techapi/classes/User.php on line 89
+[06-Feb-2026 17:16:44 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/devilracers1612/public_html/subtech.in/techapi/classes/User.php:91
+Stack trace:
+#0 /home/devilracers1612/public_html/subtech.in/techapi/v1/index.php(292): User->verifyOtp('9899816353', '8483')
+#1 {main}
+  thrown in /home/devilracers1612/public_html/subtech.in/techapi/classes/User.php on line 91
+[06-Feb-2026 17:22:24 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/devilracers1612/public_html/subtech.in/techapi/classes/User.php:100
+Stack trace:
+#0 /home/devilracers1612/public_html/subtech.in/techapi/v1/index.php(292): User->verifyOtp('9899816353', '1017')
+#1 {main}
+  thrown in /home/devilracers1612/public_html/subtech.in/techapi/classes/User.php on line 100
