@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Thank You - Subtech Freelancing Registration</title>
+
+<style>
+:root {
+    --bg: #070709;
+    --brand: #e20027;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background:
+        radial-gradient(900px 600px at 10% 0%, rgba(226, 0, 39, 0.25), transparent 60%),
+        radial-gradient(800px 520px at 100% 10%, rgba(226, 0, 39, 0.18), transparent 60%),
+        radial-gradient(700px 520px at 50% 120%, rgba(226, 0, 39, 0.12), transparent 60%),
+        var(--bg);
+
+    background-attachment: fixed;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: black;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 60px 40px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(226, 0, 39, 0.2);
+}
+
+.checkmark {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #22c55e;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleIn 0.5s ease;
+}
+
+.checkmark::after {
+    content: "✓";
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--brand);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff0033;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="checkmark"></div>
+
+    <h1>Registration Successful!</h1>
+
+    <p>Thank you for your interest in partnering with Subtech.</p>
+    <p>Our team will contact you shortly.</p>
+
+    <a href="https://subtech.in" class="btn">Back to Homepage</a>
+
+</div>
+</body>
+</html>
