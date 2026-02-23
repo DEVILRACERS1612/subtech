@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Calmingly&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
 
 
     <title>Subtech: 1 to 1000+ HP Smart Motor Starters & AMF Panels | 5-Year Warranty</title>
@@ -48,11 +51,1219 @@
             text-rendering: optimizeLegibility;
         }
 
+
+
+
+        :root {
+            --red: #d32f2f;
+            --red-dim: rgba(211, 47, 47, 0.08);
+            --dark: #0e0e0e;
+            --mid: #1a1a1a;
+            --border: rgba(255, 255, 255, 0.07);
+            --muted: rgba(255, 255, 255, 0.38);
+            --text: rgba(255, 255, 255, 0.88);
+            --font-heading: 'Barlow Condensed', sans-serif;
+            --font-body: 'Barlow', sans-serif;
+        }
+
+        body {
+            background: #0e0e0e;
+            font-family: var(--font-body);
+            color: var(--text);
+        }
+
+        /* ─── SECTION WRAPPER ─── */
+        .footprint {
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: #0e0e0e;
+        }
+
+        /* subtle diagonal grid lines — purely CSS */
+        .footprint::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(-60deg,
+                    rgba(255, 255, 255, 0.025) 0px,
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px,
+                    transparent 60px);
+            pointer-events: none;
+        }
+
+        .footprint .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ─── LABEL + HEADING ─── */
+        .section-label {
+            font-family: var(--font-heading);
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 28px;
+            height: 2px;
+            background: var(--red);
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(36px, 5vw, 54px);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            color: #fff;
+            max-width: 520px;
+            margin-bottom: 60px;
+        }
+
+        .section-heading span {
+            color: var(--red);
+        }
+
+        /* ─── STAT GRID ─── */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--border);
+            border-left: 1px solid var(--border);
+            margin-bottom: 72px;
+        }
+
+        .stat-cell {
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 40px 32px 36px;
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .stat-cell:hover {
+            background: rgba(211, 47, 47, 0.05);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .stat-number sup {
+            font-size: 28px;
+            color: var(--red);
+            vertical-align: super;
+        }
+
+        .stat-suffix {
+            font-size: 28px;
+            color: var(--red);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .stat-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.6;
+            max-width: 160px;
+        }
+
+        /* ─── SECTOR TAGS ─── */
+        .sector-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 72px;
+        }
+
+        .sector-label-text {
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-right: 4px;
+        }
+
+        .sector-tag {
+            border: 1px solid var(--border);
+            padding: 7px 16px;
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.05em;
+            transition: border-color 0.25s, color 0.25s;
+            cursor: default;
+        }
+
+        .sector-tag:hover {
+            border-color: var(--red);
+            color: #fff;
+        }
+
+        /* ─── TESTIMONIALS ─── */
+        .testimonials-heading {
+            font-family: var(--font-heading);
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .testimonial-card {
+            background: var(--mid);
+            padding: 36px 32px;
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .testimonial-card:hover {
+            background: #202020;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 64px;
+            color: var(--red);
+            opacity: 0.25;
+            line-height: 1;
+            position: absolute;
+            top: 24px;
+            right: 28px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.62);
+            margin-bottom: 28px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        .author-initial {
+            width: 38px;
+            height: 38px;
+            background: var(--red-dim);
+            border: 1px solid rgba(211, 47, 47, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--red);
+            flex-shrink: 0;
+        }
+
+        .author-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .author-role {
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* ─── BOTTOM BAR ─── */
+        .network-bar {
+            margin-top: 72px;
+            border: 1px solid var(--border);
+            padding: 32px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .network-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .network-icon {
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .network-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--red);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .network-text-title {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .network-text-sub {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .state-chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .state-chip {
+            background: var(--red-dim);
+            border: 1px solid rgba(211, 47, 47, 0.2);
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(211, 47, 47, 0.9);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .stat-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-cell {
+                padding: 28px 20px;
+            }
+
+            .stat-number {
+                font-size: 40px;
+            }
+
+            .network-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
         input,
         textarea,
         select,
         button {
             font-family: "DM Sans", sans-serif !important;
+        }
+
+        /* :root {
+      --red:    #CC1717;
+      --red-dk: #990E0E;
+      --black:  #0A0A0A;
+      --dark:   #111111;
+      --card:   #161616;
+      --border: #2A2A2A;
+      --muted:  #555;
+      --text:   #D8D8D8;
+      --white:  #F5F5F5;
+      --mono:   'JetBrains Mono', monospace;
+      --display:'Bebas Neue', cursive;
+      --body:   'DM Sans', sans-serif;
+    } */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .products-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            /* margin-left: -25px; */
+            display: flex;
+            align-items: center;
+        }
+
+        .products-header::before {
+            content: '';
+            width: 5px;
+            height: 40px;
+            background-color: #ff4757;
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body);
+            background: var(--black);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ── HERO INTRO BAND ─────────────────────── */
+        .tech-intro {
+            position: relative;
+            padding: 120px 6vw 80px;
+            background: var(--dark);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .tech-intro::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255, 255, 255, .03) 39px, rgba(255, 255, 255, .03) 40px),
+                repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255, 255, 255, .03) 39px, rgba(255, 255, 255, .03) 40px);
+        }
+
+        .tech-intro::after {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(204, 23, 23, .18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 2px;
+            background: var(--red);
+        }
+
+        .tech-intro h1 {
+            font-family: var(--display);
+            font-size: clamp(52px, 9vw, 120px);
+            line-height: .92;
+            color: var(--white);
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-intro h1 span {
+            color: var(--red);
+            -webkit-text-stroke: 0px;
+        }
+
+        .tech-intro .intro-sub {
+            max-width: 640px;
+            margin-top: 28px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--text);
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-intro .badge-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, .03);
+        }
+
+        .badge .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--red);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .4;
+                transform: scale(.7);
+            }
+        }
+
+        /* ── COMPARISON BAR ──────────────────────── */
+        .comparison-bar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comp-side {
+            padding: 56px 6vw;
+            position: relative;
+        }
+
+        .comp-side.old {
+            background: #0E0E0E;
+            border-right: 1px solid var(--border);
+        }
+
+        .comp-side.new {
+            background: linear-gradient(135deg, #150808 0%, #0A0A0A 100%);
+        }
+
+        .comp-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--white);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        /* .comp-side.old .comp-label { color: #444; } */
+        .comp-side.new .comp-label {
+            color: var(--red);
+        }
+
+        .comp-count {
+            font-family: var(--display);
+            font-size: clamp(60px, 8vw, 110px);
+            line-height: 1;
+            color: white;
+        }
+
+        .comp-side.new .comp-count {
+            color: var(--red);
+        }
+
+        .comp-desc {
+            font-size: 14px;
+            color: var(--white);
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .comp-side.new .comp-desc {
+            color: var(--text);
+        }
+
+        .comp-parts {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .comp-part {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--white);
+            text-decoration: line-through;
+        }
+
+        .comp-part::before {
+            content: '✕';
+            color: var(--white);
+            font-size: 11px;
+        }
+
+        .comp-gain {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .comp-gain-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--white);
+        }
+
+        .comp-gain-item::before {
+            content: '✓';
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .vs-divider {
+            position: absolute;
+            right: -28px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 56px;
+            height: 56px;
+            background: var(--red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--display);
+            font-size: 22px;
+            color: white;
+            box-shadow: 0 0 40px rgba(204, 23, 23, .5);
+        }
+
+        /* ── SECTION TITLE ───────────────────────── */
+        .section-header {
+            padding: 80px 6vw 40px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header h2 {
+            font-family: var(--display);
+            font-size: clamp(36px, 5vw, 72px);
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .section-header h2 em {
+            color: var(--red);
+            font-style: normal;
+        }
+
+        .section-num {
+            font-family: var(--mono);
+            font-size: 80px;
+            color: var(--border);
+            line-height: 1;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── TECHNOLOGY CARDS ────────────────────── */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .tech-card {
+            padding: 0;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: background .3s;
+        }
+
+        .tech-card:last-child {
+            border-right: none;
+        }
+
+        .tech-card-inner {
+            padding: 60px 6vw 56px;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .tech-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tech-tag {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .tech-card h3 {
+            font-family: var(--display);
+            font-size: clamp(40px, 5vw, 72px);
+            color: var(--white);
+            line-height: .95;
+            margin-bottom: 4px;
+        }
+
+        .tech-card .tech-fullname {
+            font-size: 13px;
+            color: var(--muted);
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+            font-family: var(--mono);
+        }
+
+        .tech-card .tech-lead {
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--text);
+            margin-bottom: 40px;
+            border-left: 2px solid var(--red);
+            padding-left: 20px;
+        }
+
+        /* Spec grid inside card */
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .spec-item {
+            background: var(--card);
+            padding: 20px 18px;
+        }
+
+        .spec-label {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: var(--muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .spec-value {
+            font-size: 14px;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Feature list */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .feature-item {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--red);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--red);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .feature-text strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* ── BIG STAT STRIP ──────────────────────── */
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat-block {
+            padding: 48px 32px;
+            border-right: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-block:last-child {
+            border-right: none;
+        }
+
+        .stat-block::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: rgba(204, 23, 23, .06);
+            transition: height .4s;
+        }
+
+        .stat-block:hover::after {
+            height: 100%;
+        }
+
+        .stat-num {
+            font-family: var(--display);
+            font-size: clamp(36px, 4vw, 60px);
+            color: var(--red);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ── HOW IT WORKS TIMELINE ───────────────── */
+        .timeline-section {
+            padding: 100px 6vw;
+            background: var(--dark);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-header {
+            margin-bottom: 64px;
+        }
+
+        .timeline-header h2 {
+            font-family: var(--display);
+            font-size: clamp(32px, 4vw, 60px);
+            color: var(--white);
+        }
+
+        .timeline-header p {
+            font-size: 15px;
+            color: var(--muted);
+            margin-top: 16px;
+            max-width: 500px;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--red), var(--border));
+            z-index: 0;
+        }
+
+        .timeline-step {
+            padding: 0 24px 0 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-step-num {
+            width: 64px;
+            height: 64px;
+            border-radius: 2px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--display);
+            font-size: 28px;
+            color: var(--red);
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .timeline-step:first-child .timeline-step-num {
+            background: var(--red);
+            color: white;
+            border-color: var(--red);
+            box-shadow: 0 0 30px rgba(204, 23, 23, .4);
+        }
+
+        .timeline-step h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .timeline-step p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        /* ── APPLICATIONS BAND ───────────────────── */
+        .apps-section {
+            padding: 80px 6vw;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .apps-section h2 {
+            font-family: var(--display);
+            font-size: clamp(32px, 4vw, 56px);
+            color: var(--white);
+            margin-bottom: 48px;
+        }
+
+        .apps-section h2 span {
+            color: var(--red);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--border);
+        }
+
+        .app-card {
+            background: var(--card);
+            padding: 36px 28px;
+            position: relative;
+            cursor: default;
+            transition: background .25s;
+        }
+
+        .app-card:hover {
+            background: #1C1C1C;
+        }
+
+        .app-icon {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .app-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .app-card p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .app-tag {
+            display: inline-block;
+            margin-top: 16px;
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: var(--red);
+            border: 1px solid rgba(204, 23, 23, .3);
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+
+        /* ── EXCLUSIVE BANNER ────────────────────── */
+        .exclusive-banner {
+            padding: 80px 6vw;
+            background: var(--red-dk);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exclusive-banner::before {
+            content: 'SUBTECH';
+            position: absolute;
+            right: -2%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--display);
+            font-size: clamp(80px, 14vw, 200px);
+            color: rgba(255, 255, 255, .05);
+            letter-spacing: 8px;
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .exclusive-banner h2 {
+            font-family: var(--display);
+            font-size: clamp(32px, 5vw, 72px);
+            color: white;
+            line-height: 1;
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exclusive-banner p {
+            max-width: 560px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, .75);
+            line-height: 1.75;
+            margin-top: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exclusive-banner .cta-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: white;
+            color: var(--red-dk);
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all .25s;
+        }
+
+        .btn-primary:hover {
+            background: var(--black);
+            color: white;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: transparent;
+            color: white;
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, .4);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all .25s;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, .08);
+        }
+
+        /* ── SCROLL ANIMATIONS ───────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .reveal-delay-1 {
+            transition-delay: .1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: .2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: .3s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: .4s;
+        }
+
+        /* ── RESPONSIVE ──────────────────────────── */
+        @media (max-width: 900px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tech-card {
+                border-right: none;
+            }
+
+            .vs-divider {
+                display: none;
+            }
+
+            .comp-side.old {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .stat-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
 
@@ -891,7 +2102,7 @@
 
         .icon-card:hover {
             transform: translateY(-5px);
-            border:black;
+            border: black;
         }
 
         .display-counter {
@@ -908,170 +2119,168 @@
             /* Uses Bootstrap's secondary color variable */
         }
 
-      .ss_care_linklist {
-      background: #ffffff;
-      border: 1px solid #e8e8e8;
-      border-radius: 20px;
-      padding: 20px;
-      width: 100%;
-      
-    }
+        .ss_care_linklist {
+            background: #ffffff;
+            border: 1px solid #e8e8e8;
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
 
-    .ss_care_linklist ul {
-      list-style: none;
-      display: flex;
-      gap: 14px;
-    }
+        }
 
-    /* ── Each card ── */
-    .ss_care_linklist li {
-      flex: 1;
-    }
+        .ss_care_linklist ul {
+            list-style: none;
+            display: flex;
+            gap: 14px;
+        }
 
-    .ss_care_linklist li a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 18px;
-      background: #fafafa;
-      border: 1px solid #ebebeb;
-      border-radius: 14px;
-      text-decoration: none;
-      color: #111;
-      transition: background 0.18s, box-shadow 0.18s, transform 0.15s;
-      cursor: pointer;
-    }
+        /* ── Each card ── */
+        .ss_care_linklist li {
+            flex: 1;
+        }
 
-    .ss_care_linklist li a:hover {
-     
-      
-      border:1px solid gray;
-      transform: translateY(-1px);
-    }
+        .ss_care_linklist li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 18px;
+            background: #fafafa;
+            border: 1px solid #ebebeb;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #111;
+            transition: background 0.18s, box-shadow 0.18s, transform 0.15s;
+            cursor: pointer;
+        }
 
-    /* ── Icon bubble ── */
-    .care-icon {
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
-      background: #f0f0f0;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .ss_care_linklist li a:hover {
 
-    .care-icon svg {
-      width: 20px;
-      height: 20px;
-      stroke: #222;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
 
-    /* ── Label ── */
-    .care-label {
-      flex: 1;
-      font-size: 15px;
-      font-weight: 500;
-      color: #1a1a1a;
-      white-space: nowrap;
-    }
+            border: 1px solid gray;
+            transform: translateY(-1px);
+        }
 
-    /* ── Arrow button ── */
-    .care-arrow {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
-      background: #ebebeb;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.18s;
-    }
+        /* ── Icon bubble ── */
+        .care-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .ss_care_linklist li a:hover .care-arrow {
-      background: #d8d8d8;
-    }
+        .care-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #222;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
-    .care-arrow svg {
-      width: 14px;
-      height: 14px;
-      stroke: #444;
-      fill: none;
-      stroke-width: 2;
-}
-    
-   /* ── Responsive ── */
-@media (max-width: 767px) {
+        /* ── Label ── */
+        .care-label {
+            flex: 1;
+            font-size: 15px;
+            font-weight: 500;
+            color: #1a1a1a;
+            white-space: nowrap;
+        }
 
-  /* ── Override the global SVG rule that breaks card layout ── */
-  .ss_care_linklist ul li a svg {
-    position: static !important;
-    transform: none !important;
-    top: auto !important;
-    font-size: unset !important;
-  }
+        /* ── Arrow button ── */
+        .care-arrow {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: #ebebeb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.18s;
+        }
 
-  .ss_care_linklist {
-    padding: 10px;
-    border-radius: 16px;
-  }
+        .ss_care_linklist li a:hover .care-arrow {
+            background: #d8d8d8;
+        }
 
-  .ss_care_linklist ul {
-    flex-direction: column !important;
-    gap: 10px;
-  }
+        .care-arrow svg {
+            width: 14px;
+            height: 14px;
+            stroke: #444;
+            fill: none;
+            stroke-width: 2;
+        }
 
-  .ss_care_linklist li a {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    padding: 12px 14px !important;
-    gap: 12px !important;
-    overflow: hidden !important;
-  }
+        /* ── Responsive ── */
+        @media (max-width: 767px) {
 
-  .care-icon {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
-    flex-shrink: 0 !important;
-    border-radius: 9px !important;
-  }
+            /* ── Override the global SVG rule that breaks card layout ── */
+            .ss_care_linklist ul li a svg {
+                position: static !important;
+                transform: none !important;
+                top: auto !important;
+                font-size: unset !important;
+            }
 
-  .care-icon svg {
-    width: 18px !important;
-    height: 18px !important;
-  }
+            .ss_care_linklist {
+                padding: 10px;
+                border-radius: 16px;
+            }
 
-  .care-label {
-    font-size: 14px !important;
-    flex: 1 !important;
-    white-space: nowrap !important;
-  }
+            .ss_care_linklist ul {
+                flex-direction: column !important;
+                gap: 10px;
+            }
 
-  .care-arrow {
-    width: 28px !important;
-    height: 28px !important;
-    min-width: 28px !important;
-    max-width: 28px !important;
-    flex-shrink: 0 !important;
-    margin-right: 2px !important;
-  }
+            .ss_care_linklist li a {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                padding: 12px 14px !important;
+                gap: 12px !important;
+                overflow: hidden !important;
+            }
 
-  .care-arrow svg {
-    width: 12px !important;
-    height: 12px !important;
-  }
+            .care-icon {
+                width: 36px !important;
+                height: 36px !important;
+                min-width: 36px !important;
+                max-width: 36px !important;
+                flex-shrink: 0 !important;
+                border-radius: 9px !important;
+            }
 
-}
+            .care-icon svg {
+                width: 18px !important;
+                height: 18px !important;
+            }
 
-    
+            .care-label {
+                font-size: 14px !important;
+                flex: 1 !important;
+                white-space: nowrap !important;
+            }
+
+            .care-arrow {
+                width: 28px !important;
+                height: 28px !important;
+                min-width: 28px !important;
+                max-width: 28px !important;
+                flex-shrink: 0 !important;
+                margin-right: 2px !important;
+            }
+
+            .care-arrow svg {
+                width: 12px !important;
+                height: 12px !important;
+            }
+
+        }
     </style>
 </head>
 
@@ -1109,8 +2318,7 @@
                             control panel, switchgear, and automation, trusted by industries worldwide for a sustainable
                             Earth.</p>
 
-                        <a href="https://subtech.in/contact"
-                            class="btn btn-custom mt-4 d-inline-flex align-items-center">
+                        <a href="contact" class="btn btn-custom mt-4 d-inline-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-arrow-right me-2" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -1145,31 +2353,29 @@
                                 <img src="images/brand/logo-bhutani.png" alt="Brand 1">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/DHL-Logo.png" alt="Brand 2">
+                                <img src="images/brand/DHLnew.png" alt="Brand 2">
                             </div>
                             <div class="brand-item">
                                 <img src="images/brand/Airtel-logo.png" alt="Brand 3">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/bptp.png" alt="Brand 4">
+                                <img src="images/brand/bptpnew.png" alt="Brand 4">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/1.5.png" alt="Brand 5">
+                                <img src="images/brand/lalpathlabnew.png" alt="Brand 5">
                             </div>
                             <div class="brand-item">
-                                <img src="images/Honda3.png" alt="Brand 6">
+                                <img src="images/brand/hondanew.png" alt="Brand 6">
                             </div>
+
                             <div class="brand-item">
-                                <img src="images/brand/supertech.png" alt="Brand 7">
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/brand/nalko.png" alt="Brand 7">
+                                <img src="images/brand/nalkonew.png" alt="Brand 7">
                             </div>
                             <div class="brand-item">
                                 <img src="images/brand/unoMinda.png" alt="Brand 7">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/supertech.png" alt="Brand 7">
+                                <img src="images/brand/supertechnew.png" alt="Brand 7">
                             </div>
                             <div class="brand-item">
                                 <img src="images/brand/Hathway_cable_&_Datacom_logo.svg - copy.png" alt="Brand 7">
@@ -1192,22 +2398,22 @@
                                 <img src="images/brand/logo-bhutani.png" alt="Brand 1">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/DHL-Logo.png" alt="Brand 2">
+                                <img src="images/brand/DHLnew.png" alt="Brand 2">
                             </div>
                             <div class="brand-item">
                                 <img src="images/brand/Airtel-logo.png" alt="Brand 3">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/bptp.png" alt="Brand 4">
+                                <img src="images/brand/bptpnew.png" alt="Brand 4">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/1.5.png" alt="Brand 5">
+                                <img src="images/brand/lalpathlabnew.png" alt="Brand 5">
                             </div>
                             <div class="brand-item">
-                                <img src="images/Honda3.png" alt="Brand 6">
+                                <img src="images/brand/hondanew.png" alt="Brand 6">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/supertech.png" alt="Brand 7">
+                                <img src="images/brand/supertechnew.png" alt="Brand 7">
                             </div>
                         </div>
                         <!-- Duplicate Set for Seamless Loop -->
@@ -1216,22 +2422,22 @@
                                 <img src="images/brand/logo-bhutani.png" alt="Brand 1">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/DHL-Logo.png" alt="Brand 2">
+                                <img src="images/brand/DHLnew.png" alt="Brand 2">
                             </div>
                             <div class="brand-item">
                                 <img src="images/brand/Airtel-logo.png" alt="Brand 3">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/bptp.png" alt="Brand 4">
+                                <img src="images/brand/bptpnew.png" alt="Brand 4">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/1.5.png" alt="Brand 5">
+                                <img src="images/brand/lalpathlabnew.png" alt="Brand 5">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/honda-logo-2000-full-download.png" alt="Brand 6">
+                                <img src="images/brand/hondanew.png" alt="Brand 6">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/supertech.png" alt="Brand 7">
+                                <img src="images/brand/supertechnew.png" alt="Brand 7">
                             </div>
                         </div>
                     </div>
@@ -1430,9 +2636,22 @@
                 </div>
             </div>
         </section>
+        <script>const dot = document.getElementById('dot'), ring = document.getElementById('ring');
+            let mx = 0, my = 0, rx = 0, ry = 0;
+            document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px' });
+            (function animCursor() {
+                rx += (mx - rx).15; ry += (my - ry).15;
+                ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+                requestAnimationFrame(animCursor);
+            })();
+            document.querySelectorAll('a,button,.product-card,.why-card,.tech-block').forEach(el => {
+                el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%,-50%) scale(1.8)'; ring.style.borderColor = 'rgba(204,23,23,.8)' });
+                el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.borderColor = 'rgba(204,23,23,.6)' });
+            });</script>
 
         <!-- JavaScript for Scroll-Triggered Counter Animation -->
         <script>
+
             // Use a modern approach (Intersection Observer) for scroll detection without jQuery
             document.addEventListener('DOMContentLoaded', () => {
                 const counterSection = document.getElementById('counter-section');
@@ -1501,12 +2720,56 @@
                 }
             });
         </script>
+        <section class="tech-intro">
+            <div class="eyebrow">Subtech Core Technology</div>
+            <h1>Built Different.<br><span>Engineered Better.</span></h1>
+            <p class="intro-sub">
+                While the industry still relies on conventional contactors and disconnected protection components,
+                Subtech has developed two proprietary technologies — <strong>MPU</strong> and <strong>PMC</strong> —
+                that replace multiple outdated parts with smarter, integrated solutions.
+                This is not an upgrade. This is a different class of motor control.
+            </p>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!--  OLD vs NEW COMPARISON                                  -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="comparison-bar">
+            <div class="comp-side old">
+                <div class="comp-label">Traditional Starter</div>
+                <div class="comp-count">6</div>
+                <div class="comp-desc">Separate components wired together. More failure points. More panel space. More
+                    maintenance.</div>
+                <div class="comp-parts" style="color:white">
+                    <div class="comp-part">Thermal Overload Relay</div>
+                    <div class="comp-part">Single Phase Preventer</div>
+                    <div class="comp-part">Analog Ammeter</div>
+                    <div class="comp-part">Push Buttons (Start / Stop)</div>
+                    <div class="comp-part">Conventional AC Contactor</div>
+                    <div class="comp-part">Extra Protection Modules</div>
+                </div>
+                <div class="vs-divider">VS</div>
+            </div>
+            <div class="comp-side new">
+                <div class="comp-label">Subtech Smart Panel — MPU + PMC</div>
+                <div class="comp-count">2</div>
+                <div class="comp-desc">Two intelligent units that do the work of six — and do it better.</div>
+                <div class="comp-gain">
+                    <div class="comp-gain-item">MPU: 1 unit replaces 5 components</div>
+                    <div class="comp-gain-item">PMC: Solves coil burning & chattering for life</div>
+                    <div class="comp-gain-item">Compact panel — less wiring, less space</div>
+                    <div class="comp-gain-item">Fewer parts = fewer failures = lower lifetime cost</div>
+                    <div class="comp-gain-item">Suitable for any motor: agricultural, industrial, commercial</div>
+                </div>
+            </div>
+        </div>
 
 
         <section class="container py-24 pb-5 mt-5" style="background:#f4fcfd">
             <div class="row px-5">
                 <div class="col-12 mb-4">
-                    <h2 class="section-header">Explore Our Products</h2>
+                    <h2 class="products-header">Explore Our Products</h2>
                 </div>
             </div>
             <div class="row g-4">
@@ -1554,18 +2817,18 @@ ORDER BY c.cat_name;
 
 
 
-        <section class="container py-20 " style="background-image: url(./backgorund.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-top: 50px;
-    padding-bottom: 80px;">
+        <!-- <section class="container py-20 " style="background-image: url(./backgorund.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-top: 50px;
+    padding-bottom: 80px;"> -->
 
 
-            <div class="row px-5 text-center">
+        <!-- <div class="row px-5 text-center">
                 <div class="col-12 mb-4">
                     <h2 class="text-white" style="font-weight:700">5X Smarter, 3X Safer, 0% Downtime</h2>
                 </div>
-            </div>
-            <div class="row g-4">
+            </div> -->
+        <!-- <div class="row g-4">
                 <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6">
+        <!-- <div class="col-lg-4 col-md-6">
 
                     <div class="text-center justify-content-center">
                         <img src="images/whychoose-4.webp" class="product-card-image justify-content-center"
@@ -1573,10 +2836,10 @@ ORDER BY c.cat_name;
                         <p class="text-white">Coil Burning Warranty</p>
                     </div>
 
-                </div>
+                </div> -->
 
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6">
+        <!-- Card 2 -->
+        <!-- <div class="col-lg-4 col-md-6">
 
                     <div class="text-center justify-content-center">
                         <img src="images/whychoose-5.webp" class="product-card-image justify-content-center"
@@ -1584,10 +2847,10 @@ ORDER BY c.cat_name;
                         <p class="text-white">Micro Controller Technology</p>
                     </div>
 
-                </div>
+                </div> -->
 
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6">
+        <!-- Card 3 -->
+        <!-- <div class="col-lg-4 col-md-6">
                     <div class="">
                         <div class="text-center justify-content-center">
                             <img src="images/whychoose-6.webp" class="product-card-image justify-content-center"
@@ -1595,12 +2858,12 @@ ORDER BY c.cat_name;
                             <p class="text-white">Less Wiring Faster Setup</p>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> -->
+        <!-- </div>  -->
 
 
 
-        </section>
+        <!-- </section> -->
 
 
 
@@ -1615,8 +2878,8 @@ ORDER BY c.cat_name;
         <!-- About Us -->
         <div class="s-banner-colection flat-spacing-4 yellow-glow">
             <div class="container">
-                <div class="banner-content tf-grid-layout tf-col-2 hover-overlay-2">
-                    <div class="image img-hv-overlay">
+                <div class="banner-content tf-grid-layout tf-col-2 ">
+                    <div class="">
                         <img src="images/subtech.webp" data-src="images/subtech.webp" alt="subtech company image"
                             class="lazyload">
                     </div>
@@ -1626,7 +2889,7 @@ ORDER BY c.cat_name;
                                 <b>About Us</b>
                             </h2>
                             <h3 class="sub text-md">Your Trusted Partner in Electrical Solutions.</h3><br>
-                            <p class="sub text-md">
+                            <p class="sub text-md" style="color: black;">
                                 At <b>Subtech</b>, we have been providing quality electrical solutions for over 25
                                 years, made to be safe, reliable, and eco-friendly. With a focus on new ideas and happy
                                 customers, we've built a strong name as a trusted partner across many industries.<br>
@@ -1788,79 +3051,60 @@ ORDER BY c.cat_name;
             </div>
         </div>
     </section>
-
-
-
-    <section class="py-20 " style="background-image: url(./images/back2.webp); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-top: 50px;
-    padding-bottom: 200px;">
-
+    <section class="footprint">
         <div class="container">
 
-            <div class="row px-5 text-center">
-                <div class="flat-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <h2 class="title text-white">Our Footprint of <b style="color:#fff23e">Happy Customers</b></h2>
-                    <p class="text-white">Connected across India with a network of satisfied customers and reliable
-                        electrical solutions</p>
+            <!-- Label + Heading -->
+            <p class="section-label">Trusted Across India</p>
+            <h2 class="section-heading">
+                Our Footprint of<br><span>Reliable Installations</span>
+            </h2>
+
+            <!-- Stat Grid -->
+            <div class="stat-grid">
+
+                <div class="stat-cell">
+                    <div class="stat-number">500<span class="stat-suffix">+</span></div>
+                    <div class="stat-label">Active Clients</div>
+                    <div class="stat-desc">Industries, institutions, and government bodies served.</div>
                 </div>
+
+                <div class="stat-cell">
+                    <div class="stat-number">28<span class="stat-suffix">+</span></div>
+                    <div class="stat-label">States Covered</div>
+                    <div class="stat-desc">Pan-India presence through a trained dealer network.</div>
+                </div>
+
+                <div class="stat-cell">
+                    <div class="stat-number">99<span class="stat-suffix">+</span></div>
+                    <div class="stat-label">Cities</div>
+                    <div class="stat-desc">Serviceable locations backed by local support teams.</div>
+                </div>
+
+                <div class="stat-cell">
+                    <div class="stat-number">25<span class="stat-suffix">+</span></div>
+                    <div class="stat-label">Years in Industry</div>
+                    <div class="stat-desc">Since 1998 — built on engineering reliability.</div>
+                </div>
+
             </div>
 
-
-
-
-
-            <div class="row g-5 align-items-center">
-                <!-- Left Column: Text Content -->
-                <div class="col-md-6 text-center text-md-start">
-
-                    <img src="images/customer.webp" alt="Happy Customers"
-                        class="img-fluid object-fit-cover w-100 h-100">
-
-
-
-                </div>
-
-                <!-- Right Column: Image and Card -->
-                <div class="col-md-6 ">
-
-                    <div class="row g-4">
-                        <!-- Stats Card -->
-                        <div class="col-12">
-                            <div class="content-card stats-card text-white">
-                                <div class="stat-item text-white">
-                                    <div class="stat-number">500+</div><br>
-                                    <div class="stat-label">Customers</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-number">28</div><br>
-                                    <div class="stat-label">States</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-number">99</div><br>
-                                    <div class="stat-label">Cities</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Nationwide Network Card -->
-                        <div class="col-12">
-                            <div class="content-card network-card text-white">
-                                <h3 style="color:fff">Nationwide Electrical Network</h3>
-                                <p>Our extensive network spans across India, powering industries, commercial spaces, and
-                                    infrastructure projects with reliable electrical solutions. From motor starters to
-                                    smart panels, we ensure consistent performance and reliable support.</p>
-                                <button class="btn btn-tag">Manufacturing</button>
-                                <button class="btn btn-tag">Infrastructure</button>
-                                <button class="btn btn-tag">Commercial</button>
-                                <button class="btn btn-tag">Industrial</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
+            <!-- Sector Tags -->
+            <div class="sector-row">
+                <span class="sector-label-text">Sectors &nbsp;—</span>
+                <span class="sector-tag">Manufacturing</span>
+                <span class="sector-tag">Infrastructure</span>
+                <span class="sector-tag">Commercial</span>
+                <span class="sector-tag">Industrial</span>
+                <span class="sector-tag">Government / PSU</span>
+                <span class="sector-tag">Defence</span>
+                <span class="sector-tag">Energy & Utilities</span>
             </div>
-
-
+        </div>
     </section>
+
+
+
 
 
 
@@ -1943,14 +3187,22 @@ ORDER BY c.cat_name;
             object-fit: contain;
         }
 
+        .testimonial-cards-section .container {
+            position: relative;
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+
 
 
         .testimonial-cards-container {
             max-width: 1400px;
             margin: 0 auto;
-            position: relative;
             overflow: hidden;
-            padding: 0 60px;
+            position: static;
+            /* ✅ changed from relative */
+            padding: 0;
+            /* ✅ removed 0 60px */
         }
 
         .testimonial-cards-wrapper {
@@ -2121,42 +3373,88 @@ ORDER BY c.cat_name;
 
         @media (max-width: 768px) {
             .testimonial-cards-section .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .testimonial-cards-section .container {
+                padding-left: 40px;
+                padding-right: 40px;
             }
 
             .testimonial-cards-container {
-                padding: 0 50px;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .testimonial-cards-wrapper {
+                gap: 15px;
             }
 
             .testimonial-card-item {
-                min-width: calc(100% - 30px);
+                min-width: calc(100% - 2px);
                 max-width: 100%;
-                padding: 30px 25px;
+                padding: 22px 18px;
             }
 
             .testimonial-nav-arrow {
-                width: 42px;
-                height: 42px;
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .testimonial-cards-container {
-                padding: 0 40px;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
             }
 
-            .testimonial-card-item {
-                padding: 25px 20px;
-                min-width: calc(100% - 20px);
+            .testimonial-nav-arrow.prev {
+                left: 4px;
+            }
+
+            .testimonial-nav-arrow.next {
+                right: 4px;
             }
 
             .client-name-title {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .testimonial-card-text {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-cards-section .container {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+
+            .testimonial-nav-arrow {
+                width: 35px;
+                /* ✅ smaller arrows */
+                height: 35px;
+                font-size: 1.1rem;
+            }
+
+            .testimonial-nav-arrow.prev {
+                left: 5px;
+            }
+
+            .testimonial-nav-arrow.next {
+                right: 5px;
+            }
+
+            .testimonial-card-item {
+                min-width: 100%;
+                max-width: 100%;
+                padding: 20px 15px;
+            }
+
+            /* ✅ Stop name from wrapping */
+            .client-name-title {
                 font-size: 0.95rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     </style>
@@ -2165,19 +3463,18 @@ ORDER BY c.cat_name;
         <div class="container">
             <h2 class="section-title">What our customer Say's</h2>
 
-            <div class="testimonial-cards-container">
-                <div class="testimonial-nav-arrow prev" onclick="moveTestimonialCards(-1)">‹</div>
+            <!-- ✅ Arrows are NOW outside the overflow:hidden container -->
+            <div class="testimonial-nav-arrow prev" onclick="moveTestimonialCards(-1)">‹</div>
 
+            <div class="testimonial-cards-container">
                 <div class="testimonial-cards-wrapper" id="testimonialCardsWrapper">
                     <?php foreach ($testimonials as $index => $testimonial): ?>
                         <div class="testimonial-card-item">
                             <div class="testimonial-card-header">
-
                                 <div class="client-info-left">
                                     <h3 class="client-name-title">
                                         <?php echo htmlspecialchars($testimonial['name']); ?>,
                                     </h3>
-
                                     <?php if (!empty($testimonial['designation']) || !empty($testimonial['company'])): ?>
                                         <div class="client-role">
                                             <span class="role-icon">◉</span>
@@ -2185,9 +3482,8 @@ ORDER BY c.cat_name;
                                                 <?php
                                                 if (!empty($testimonial['designation'])) {
                                                     echo htmlspecialchars($testimonial['designation']);
-                                                    if (!empty($testimonial['company'])) {
+                                                    if (!empty($testimonial['company']))
                                                         echo ', ';
-                                                    }
                                                 }
                                                 if (!empty($testimonial['company'])) {
                                                     echo htmlspecialchars($testimonial['company']);
@@ -2197,36 +3493,27 @@ ORDER BY c.cat_name;
                                         </div>
                                     <?php endif; ?>
                                 </div>
-
-                                <!-- ✅ BRAND RIGHT (Moved Outside Span) -->
                                 <?php if (!empty($testimonial['icon'])): ?>
                                     <div class="brand-right">
                                         <img src="<?= htmlspecialchars($testimonial['icon']); ?>" alt="brand logo">
                                     </div>
                                 <?php endif; ?>
-
                             </div>
-
-
                             <?php echo generateStars($testimonial['rating']); ?>
-
                             <p class="testimonial-card-text">
                                 <?php echo htmlspecialchars($testimonial['text']); ?>
                             </p>
                         </div>
                     <?php endforeach; ?>
 
-                    <!-- Duplicate cards for infinite scroll effect -->
+                    <!-- Duplicate cards for infinite scroll -->
                     <?php foreach ($testimonials as $index => $testimonial): ?>
                         <div class="testimonial-card-item">
-
                             <div class="testimonial-card-header">
-
                                 <div class="client-info-left">
                                     <h3 class="client-name-title">
                                         <?php echo htmlspecialchars($testimonial['name']); ?>,
                                     </h3>
-
                                     <?php if (!empty($testimonial['designation']) || !empty($testimonial['company'])): ?>
                                         <div class="client-role">
                                             <span class="role-icon">◉</span>
@@ -2234,9 +3521,8 @@ ORDER BY c.cat_name;
                                                 <?php
                                                 if (!empty($testimonial['designation'])) {
                                                     echo htmlspecialchars($testimonial['designation']);
-                                                    if (!empty($testimonial['company'])) {
+                                                    if (!empty($testimonial['company']))
                                                         echo ', ';
-                                                    }
                                                 }
                                                 if (!empty($testimonial['company'])) {
                                                     echo htmlspecialchars($testimonial['company']);
@@ -2246,29 +3532,23 @@ ORDER BY c.cat_name;
                                         </div>
                                     <?php endif; ?>
                                 </div>
-
-                                <!-- ✅ BRAND ICON RIGHT -->
                                 <?php if (!empty($testimonial['icon'])): ?>
                                     <div class="brand-right">
                                         <img src="<?= htmlspecialchars($testimonial['icon']); ?>" alt="brand logo">
                                     </div>
                                 <?php endif; ?>
-
                             </div>
-
                             <?php echo generateStars($testimonial['rating']); ?>
-
                             <p class="testimonial-card-text">
                                 <?php echo htmlspecialchars($testimonial['text']); ?>
                             </p>
-
                         </div>
                     <?php endforeach; ?>
-
                 </div>
-
-                <div class="testimonial-nav-arrow next" onclick="moveTestimonialCards(1)">›</div>
             </div>
+
+            <!-- ✅ Next arrow also outside -->
+            <div class="testimonial-nav-arrow next" onclick="moveTestimonialCards(1)">›</div>
 
             <div class="testimonial-pagination" id="testimonialPagination">
                 <?php for ($i = 0; $i < count($testimonials); $i++): ?>
@@ -2287,45 +3567,32 @@ ORDER BY c.cat_name;
         const paginationDots = document.querySelectorAll('#testimonialPagination .testimonial-dot');
 
         // Calculate card width including gap
-        function getCardWidth() {
-            const card = document.querySelector('.testimonial-card-item');
-            if (!card) return 400; // fallback
-            const style = window.getComputedStyle(card);
-            const width = card.offsetWidth;
-            const gap = 30; // fixed gap value
-            return width + gap;
-        }
-
+       function getCardWidth() {
+    const card = document.querySelector('.testimonial-card-item');
+    if (!card) return 400;
+    const width = card.offsetWidth;
+    const gap = window.innerWidth <= 768 ? 15 : 30;
+    return width + gap;
+}
         // Get number of cards to scroll
         function getScrollAmount() {
-            if (window.innerWidth <= 768) return 1;
-            if (window.innerWidth <= 1200) return 2;
-            return 3;
-        }
-
-        function moveTestimonialCards(direction) {
-            const scrollAmount = getScrollAmount();
-
-            currentCardIndex += (direction * scrollAmount);
-
-            // Reset to beginning or end for infinite scroll effect
-            if (currentCardIndex >= totalCards) {
-                currentCardIndex = 0;
-            } else if (currentCardIndex < 0) {
-                currentCardIndex = totalCards - 1;
-            }
-
-            updateCardsPosition();
-        }
-
-        function jumpToTestimonial(index) {
-            currentCardIndex = index;
-            updateCardsPosition();
+            // if (window.innerWidth <= 768) return 1;
+            // if (window.innerWidth <= 1200) return 2;
+            // return 3;
+            return 1;
         }
 
         function updateCardsPosition() {
             const cardWidth = getCardWidth();
             const translateValue = -(currentCardIndex * cardWidth);
+
+            // Remove transition temporarily when jumping
+            if (currentCardIndex === 0 || currentCardIndex === totalCards - 1) {
+                cardsWrapper.style.transition = 'none';
+                setTimeout(() => {
+                    cardsWrapper.style.transition = 'transform 0.4s ease';
+                }, 50);
+            }
 
             cardsWrapper.style.transform = `translateX(${translateValue}px)`;
 
@@ -2334,6 +3601,24 @@ ORDER BY c.cat_name;
                 dot.classList.toggle('active', index === currentCardIndex);
             });
         }
+
+        function moveTestimonialCards(direction) {
+            currentCardIndex += direction;
+
+            // Infinite scroll - smooth loop
+            if (currentCardIndex >= totalCards) {
+                currentCardIndex = 0;
+            } else if (currentCardIndex < 0) {
+                currentCardIndex = totalCards - 1;
+            }
+
+            updateCardsPosition();
+        }
+        function jumpToTestimonial(index) {
+            currentCardIndex = index;
+            updateCardsPosition();
+        }
+
 
         // Auto-play functionality
         let autoPlayInterval;
@@ -2883,7 +4168,7 @@ ORDER BY c.cat_name;
 
 
 
-    <section class="s-banner-colection banner-cls-petaccess">
+    <!-- <section class="s-banner-colection banner-cls-petaccess">
         <div class="container">
             <div class="banner-content tf-grid-layout tf-col-2">
                 <div class="image img-hv-overlay" style="    background: #fff;">
@@ -2963,7 +4248,7 @@ ORDER BY c.cat_name;
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 

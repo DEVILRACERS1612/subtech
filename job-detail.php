@@ -23,7 +23,7 @@ $row=$db->query("select * from mi_jobs where url_name=? and mi_status='Yes' orde
 	 <?php include_once"config/header.php";?>
 	 
 		
-		<section class="s-faq flat-spacing-14">
+		<!-- <section class="s-faq flat-spacing-14">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -64,9 +64,41 @@ $row=$db->query("select * from mi_jobs where url_name=? and mi_status='Yes' orde
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 		
-		
+		<section class="career-detail py-5">
+    <div class="container career-container" style="max-width: 1000px;">
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px; color: gray;">
+
+        <!-- Title -->
+        <h1 class="career-title"><?=$row['title'];?></h1>
+
+        <!-- Short intro (optional) -->
+        <p class="career-subtext">
+            From smart tech to seamless journeys, we help businesses grow faster.
+        </p>
+
+        <!-- Badge -->
+        <span class="career-badge"><?=$row['job_type'];?></span>
+        </div>
+
+        <!-- Divider -->
+        <hr class="career-divider">
+
+        <!-- Description -->
+        <div class="career-content">
+            <?=$row['sdes'];?>
+        </div>
+
+        <!-- Apply Button -->
+        <div class="mt-4">
+            <button id="apply" class="btn btn-danger px-4 py-2">
+                Apply Now
+            </button>
+        </div>
+
+    </div>
+</section>
 		
 		
 		
@@ -153,48 +185,57 @@ $row=$db->query("select * from mi_jobs where url_name=? and mi_status='Yes' orde
 <!-- ask question  -->
     <div class="modal modalCentered fade  modal-ask-question popup-style-2" id="applyModel">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="title text-xl-2 fw-medium">Apply Job</span>
-                    <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
-                </div>
-                <form class="form-ask-question" id="applyform" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="<?=$post_id?>" />
-                    <input type="hidden" name="method" value="JobApply" />
-                    <input type="hidden" name="job" value="<?=$row['id']?>" />
-                    
-                    <fieldset class="mb_15">
-                        <div class="text">Your name*</div>
-                        <input type="text" placeholder="Your Full Name" name="name" tabindex="2" value=""
-                            aria-required="true" required="">
-                    </fieldset>
-                    <div class="cols flex-md-nowrap flex-wrap">
-                        <fieldset class="mb_15">
-                            <div class="text">Your email*</div>
-                            <input type="email" placeholder="" name="email" tabindex="1" value=""
-                                aria-required="true" required="">
-                        </fieldset>
-                        <fieldset class="mb_15">
-                            <div class="text">Your Mobile *</div>
-                            <input type="number" placeholder="Mobile Number"  name="mobile" tabindex="2" value="" aria-required="true">
-                        </fieldset>
-                    </div>
-                    <fieldset class="mb_15">
-                        <div class="text">Resume * (upload pdf file)</div>
-                        <input type="file" name="resume" tabindex="3" aria-required="true" accept=".pdf" />
-                    </fieldset>
-                    <fieldset class="">
-                        <div class="text">Details</div>
-                        <textarea placeholder="Type Aboutself" name="message" tabindex="4" aria-required="true"></textarea>
-                    </fieldset>
-                    
-                    <div id="msg"></div>
-                    <div class="text-center">
-                        <button type="submit" class="tf-btn animate-btn d-inline-flex justify-content-center" id="btnsubmit"><span>Submit
-                                </span></button>
-                    </div>
-                </form>
+           <div class="modal-content custom-apply-modal">
+    
+    <div class="modal-header border-0 text-center d-block">
+        <h3 class="fw-bold mb-1">Apply Now</h3>
+        <p class="text-muted small">Join the team by filling out the form below</p>
+        <span class="icon-close icon-close-popup position-absolute end-0 top-0 m-3" data-bs-dismiss="modal"></span>
+    </div>
+
+    <div class="modal-body px-4 pb-4">
+        <form class="form-ask-question" id="applyform" enctype="multipart/form-data">
+
+            <input type="hidden" name="_token" value="<?=$post_id?>" />
+            <input type="hidden" name="method" value="JobApply" />
+            <input type="hidden" name="job" value="<?=$row['id']?>" />
+
+            <div class="mb-3">
+                <label class="form-label" style="max: width 700px;">Full Name *</label>
+                <input type="text" class="form-control" name="name" required>
             </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Mobile Number *</label>
+                <input type="number" class="form-control" name="mobile">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Upload Resume (PDF only) *</label>
+                <input type="file" class="form-control" name="resume" accept=".pdf">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">About You</label>
+                <textarea class="form-control" name="message" rows="4"></textarea>
+            </div>
+
+            <div id="msg" class="mb-3 text-center"></div>
+
+            <div class="text-center">
+                <button type="submit" id="btnsubmit" class="btn btn-danger px-5 py-2 fw-semibold">
+                    Submit Application
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
         </div>
     </div>
     <!-- /ask question  -->

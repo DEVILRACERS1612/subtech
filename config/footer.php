@@ -2,15 +2,19 @@
 <footer id="footer" class="footer-default xl-pb-70 mt-5">
     <div class="footer-top">
         <div class="container">
+              <div class="text-center" style="margin-top: 15px;">
+    <a href="./">
+        <img src="<?= BASE_PATH ?>images/white.png" class="logo" alt="subtech logo white" style="filter: none; opacity: 1; height: 3.5rem;">
+    </a>
+</div>
+<h2 class="title text-white" style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center;">
+    Since 1998
+</h2>
 
             <div class="flat-title py-5">
-                <h2 class="title text-white" style="font-size:3rem">
-                    Automate<span style="color:red;">.</span>
-                    Protect<span style="color:red;">.</span>
-                    Perform<span style="color:red;">.</span>
-                </h2>
+                
 
-                <p class="text-white">Your Power Our Percision.</p>
+                <!-- <p class="text-white">Your Power Our Precision.</p> -->
                 <div class="align-items-center">
                     <a href="https://subtech.in/contact" class="btn btn-care d-inline-flex align-items-center">
                         <img src="https://subtech.in/images/customer_care.png" alt="Customer Care"
@@ -24,11 +28,7 @@
 
 
             <div class="footer-top-wrap">
-                <div class="footer-logo">
-                    <a href="./">
-                        <img src="<?= BASE_PATH ?>images/white.png" class="logo" alt="subtech logo white">
-                    </a>
-                </div>
+               
                 <ul class="tf-social-icon style-large">
                     <li>
                         <a href="https://www.facebook.com/subtech.in" class="social-item social-facebook"
@@ -82,7 +82,8 @@
                                         </svg>
                                     </span>
                                     <a target="_blank" href="">
-                                        271, Udyog Kendra 2, Ecotech III, Greater Noida, Tusyana, Uttar Pradesh 201306
+                                        271, Udyog Kendra II, Ecotech III,
+                                        Greater Noida - 201306, Uttar Pradesh, India
                                     </a>
                                 </li>
                                 <li class="item">

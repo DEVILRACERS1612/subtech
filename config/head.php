@@ -469,7 +469,9 @@
 
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="<?=BASE_PATH?>images/logo/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="<?=BASE_PATH?>images/logo/favicon.png">
+<link rel="apple-touch-icon" href="<?=BASE_PATH?>images/logo/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-title" content="Subtech">
     
     <meta name="google-site-verification" content="qpCnFeQMZFmQMgeon4-uGnhFcT0kVtShsejqBOIRYBo"/>
 
