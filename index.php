@@ -2378,7 +2378,7 @@
                                 <img src="images/brand/supertechnew.png" alt="Brand 7">
                             </div>
                             <div class="brand-item">
-                                <img src="images/brand/Hathway_cable_&_Datacom_logo.svg - copy.png" alt="Brand 7">
+                                <img src="images/brand/Hathway.png" alt="Brand 7">
                             </div>
                             <div class="brand-item">
                                 <img src="images/brand/NTPC.NS.png" alt="Brand 7">
